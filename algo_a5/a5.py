@@ -11,10 +11,13 @@
 #  12025 | 2   |              105 |              105 |              105 |   X
 #    420 | 5   |              420 |              420 |              420 |   X
 #   2020 | 2   |                0 |                0 |                0 |   X
-#    555 | 5   |                - |                - |                - |   X
-#      0 | 0   |                - |                - |                - |   X
+#    555 | 5   |                0 |                0 |                0 |   X
+#      0 | 0   |                0 |                0 |                0 |   X
 #      5 |     | nepieņemami dati | nepieņemami dati | nepieņemami dati |   X
 #        | 5   | nepieņemami dati | nepieņemami dati | nepieņemami dati |   X
+#     -5 |     | nepieņemami dati | nepieņemami dati | nepieņemami dati |   X
+#     -5 | 5   | nepieņemami dati | nepieņemami dati | nepieņemami dati |   X
+#      5 | -5  | nepieņemami dati | nepieņemami dati | nepieņemami dati |   X
 #    txt | 5   | nepieņemami dati | nepieņemami dati | nepieņemami dati |   X
 #      5 | txt | nepieņemami dati | nepieņemami dati | nepieņemami dati |   X
 #    txt | txt | nepieņemami dati | nepieņemami dati | nepieņemami dati |   X
@@ -28,7 +31,7 @@ while (True):
     # Ja ir tukšums, apturam programmu.
     inputStr = input("Ievadiet naturālu skaitli un izņemamo ciparu: ")
     if (inputStr == ""):
-        exit()
+        break;
 
     try:
         # Pārliecinamies, ka ievadīti divi skaitļi
@@ -50,25 +53,16 @@ while (True):
         # ar izņemamo ciparu.
         res = 0
         loop = 0
-        hasVal = False
         while inputNum:
             digit = int(inputNum % 10)
             inputNum = int(inputNum / 10)
 
             if digit != removeNum:
                 res += digit * pow(10, loop)
-                hasVal = True
                 loop += 1
 
-        # Paziņojot rezultātu, atšķiram ievadītu nulli no tukšas ciparu virknes.
-        # Ja rezultāts ir 0, bet 0 netika ievadīta, aizvietojam rezultātu ar '-',
-        # n=444 k=4 -> ---
-        # Ja rezultāts ir 0, un 0 bija izņemamais cipars, aizvietojam rezultātu ar '-'.
-        # n=000 k=0 -> ---
-        if (hasVal):
-            print(res, end="\n\n")
-        else:
-            print("-", end="\n\n")
+        # Paziņojam rezultātu
+        print(res, end="\n\n")
 
     except ValueError:
         print("Nepieņemami dati\n")

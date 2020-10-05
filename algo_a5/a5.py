@@ -31,7 +31,7 @@ while (True):
     # Ja ir tukšums, apturam programmu.
     inputStr = input("Ievadiet naturālu skaitli un izņemamo ciparu: ")
     if (inputStr == ""):
-        break;
+        break
 
     try:
         # Pārliecinamies, ka ievadīti divi skaitļi

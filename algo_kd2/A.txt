@@ -1,0 +1,24 @@
+Visās modernās programmēšanas valodās ir vajadzība pēc cikliem, tomēr šo ciklu darbība mēdz būt diezgan atšķirīga.
+Tas it īpaši izceļās, pimēram, salīdzinot C++ un Python valodas.
+
+Abi cikli piedāvā iespēju veikt darbības atkārtoti noteiku skaitu reižu.
+C++ for cikls paļaujas uz lietotāju uzstādīt pareizu iznicializiāciju, pārbaudi un inkrementāciju.
+Tas nozīmē, ka cikls parasti būs vizuāli sarežģītāks, bet dos programētājam pilnīgu kontroli pār cikla soli un
+ļaus manipulēt ar skaitītāju.
+
+for (<iznicializiācija>; <pārbaude>; <inkrementācija>) {}
+for (int i = 0; i < 10; i++) {}
+
+C++ for cikls arī diezgan viegli pārveidojams par for-each ciklu, kas ļauj ērtāk pārietoties pa struktūrām,
+kas atbalsta iterāciju, piemēram, vektoriem.
+
+for (auto i : vec) {}
+
+
+Python cikli stipri vairāk atgādina C++ for-each ciklus nekā tradicionālo for ciklu.
+Tos tipiski lieto izmantojot range() sintaksi, norādot vajadzīgo skaitļu diapazonu.
+Šī implementācija ir pārskatāmāka, bet nedod ne tuvu tik daudz kontroli pār iterāciju.
+
+for i in range(0, 10):
+
+Tieši tāda paša sintakse lietojama Python for-each ciklā, iterējot pāri nevis range(), bet vēlamajai struktūrai.

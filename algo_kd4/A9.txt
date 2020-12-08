@@ -1,0 +1,16 @@
+Konstruktors ir īpaša klases/struktūras metode, kas tiek automātiski
+izsaukta tās klases/struktūras radīšanas brīdī. Tas parasti tiek izmantots
+objekta sākotnējo vērtību uzstādīšanai vai nepieciešamu papildinstrukciju
+izpildei.
+Tas darbojas kā pretstats destruktoram, kas automātiski tiek izsaukts objekta
+iznīcināšanas laikā, kad tiek pamests piederošais instrukciju bloks vai
+izsaukta 'delete' komanda.
+
+class Foo {
+public:
+    Foo() {         // Konstruktors
+        x = bar();
+        baz();
+        ...
+    }
+};

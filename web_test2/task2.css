@@ -1,0 +1,17 @@
+
+ol {
+    display: none;
+}
+
+@media (min-width: 400px) {
+
+    ol { display: inherit; }
+
+    ol {
+        width: 80px;
+        height: 20px;
+        border: 1px dotted black;
+        border-radius: 16px;
+        background-color: green;
+    }
+}

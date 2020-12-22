@@ -1,0 +1,10 @@
+
+1. form#form p[id] input {background-color:yellow;}
+2. section.container p.but_container .act_button{background-color:blue;}
+3. form#form p input.act_button{background-color:red;}
+4. p.form #name{background-color:green;}
+
+4. neattiecas uz 9. rindas elementu
+1. pēdējā prioritāte, jo lieto tipa selektoru (input)
+2. vidējā prioritāte, jo lieto klases selektoru (.act_button)
+3. augstākā prioritāte, jo lieto klases selektoru (.act_button), bet parādās vēlāk

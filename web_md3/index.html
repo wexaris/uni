@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+Rainers Vorza rv20039
+-->
+<html>
+    <head>
+        <title>COVID-19 Statistics</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="covid_data.js"></script>
+        <script type="text/javascript" src="homework3.js"></script>
+        <style>
+            table, td, th { border: 1px solid gray; border-collapse: collapse;}
+            td:nth-child(5), td:nth-child(6), td:nth-child(7) {text-align: right;}
+        </style>
+    </head>
+    <body>
+        <h1>COVID-19 Statistics</h1>
+        <div>
+            <div>
+                <label for="continent-select">Continent:</label>
+                <select id="continent-select">
+                    <option value="all">All</option>
+                </select>
+            </div>
+            <div>
+                <label for="country-select">Country:</label>
+                <select id="country-select">
+                    <option value="all">All</option>
+                </select>
+            </div>
+            <div>
+                <label for="date-from">Date from:</label>
+                <input type="text" id="date-from" placeholder="YYYY-MM-DD">
+                <label style="display: none; color: red;" id="date-from-invalid">invalid date</label>
+            </div>
+            <div>
+                <label for="date-until">Date until:</label>
+                <input type="text" id="date-until" placeholder="YYYY-MM-DD">
+                <label style="display: none; color: red;" id="date-until-invalid">invalid date</label>
+            </div>
+            <div>
+                <label for="search">Country search:</label>
+                <input type="search" id="search">
+            </div>
+            <div id="buttons">
+                <button id="show-list">Show list</button>
+            </div>
+            <table id="statistics">
+                <tr>
+                    <th>Date</th>
+                    <th>Country</th>
+                    <th>Cases</th>
+                    <th>Deaths</th>
+                    <th>Cumulative number for 14 days of COVID-19 cases per 100000</th>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+
+C++ programmēšanas valodā char un int tipi ir fundamentāli ļoti līdzīgi un
+ar tiem iespējams manipulēt ar gandrīz vienādām metodēm. Tas ir tāpēc,
+ka char tips ir balstīts uz tādas pašas 8 bitu vērtības kā 8 bitu int.
+
+(int)0 == (int)'\0'
+
+Nozīmīga atšķirība ir to paredzētajā pielietojumā. Char tips ir paredzēts,
+lai strādātu ar simboliem un simbolu virknēm, kuras veido char masīvi.
+
+const char* x = "abcd"
+char y[4] = { 'a', 'b', 'c', 'd' }
+
+Toties līdzība ir daudz mazāka, ja char salīddzina ar peldošā punkta tipiem
+float un double. Tie veidoti no atsevišķa skaitļa un eksponenta, kas tos padara
+tiešā veidā nesalīdzināmus.

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+Rainers Vorza rv20039
+-->
+<html>
+    <head>
+        <title>Practical Assignment</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body id="body">
+        <div id="vanta-1">
+            <div id="main">
+                <div class="container">
+                    <h1 id="title" class="fade-1">Hi, I'm Rainers</h1>
+                    <h2 id="subtitle" class="fade-2">This is a website</h2>
+
+                    <p class="fade-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p class="fade-4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p class="fade-5">Interested? Find more <a href="https://loremipsum.io/" target="_blank">here</a>.</p>
+                </div>
+                <div id="scroll" class="fade-6" onClick="document.getElementById('apps').scrollIntoView({ behavior: 'smooth', block: 'start' });">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="white" d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div id="apps">
+            <h3>Applications</h3>
+            <ul id="app-list"></ul>
+        </div>
+
+        <div id="vanta-2">
+            <span class="overlay"></span>
+            <div id="sub-menu">
+                <img src="media/email.jpg" alt="img">
+                <div id="info">
+                    <h3>Subscribe</h3>
+                    <h4>to our newsletter</h4>
+                    <form id="sub-form" name="sub-form" action="https://www.w3schools.com/action_page.php">
+                        <input id="email-field" type="text" name="email" placeholder="Your e-mail">
+                        <br>
+                        <label id="email-error">Please enter an email</label>
+                        <br>
+                        <input id="sub-button" type="button" value="Subscribe" onclick="form_submit()">
+                    </form>
+                </div>
+            </div>
+
+            <div id="footer">
+                <ul>
+                    <li>Rainers Vorza</li>
+                    <li>rv20039</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- JavaScript -->
+        <script type="text/javascript" src="app_list.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+
+        <!-- Vanta -->
+        <script src="https://cdn.jsdelivr.net/gh/tengbao/vanta/vendor/three.r119.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/tengbao/vanta/dist/vanta.fog.min.js"></script>
+        <script>
+            VANTA.FOG({
+                el: "#vanta-1",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                highlightColor: 0xc03953,
+                midtoneColor: 0x983686,
+                lowlightColor: 0x610b56,
+                baseColor: 0x1b0d2d,
+                blurFactor: 0.50,
+                speed: 0.80,
+                zoom: 1.40
+            })
+            VANTA.FOG({
+                el: "#vanta-2",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                highlightColor: 0xc03953,
+                midtoneColor: 0x983686,
+                lowlightColor: 0x610b56,
+                baseColor: 0x1b0d2d,
+                blurFactor: 0.6,
+                speed: 0.80,
+                zoom: 1.30
+            })
+        </script>
+    </body>
+</html>

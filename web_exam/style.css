@@ -1,0 +1,344 @@
+/*
+ * Rainers Vorza rv20039
+ */
+
+html {
+    font-size: 24px;
+    font-family: "Avenir Medium", "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+body, dd, dl, dt, h1, h2, h3, h4, h5, h6, hr, li, ol, p, textarea, ul {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: #bbb;
+    background: black;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+/* CLASSES */
+
+.fade-1 {
+    animation-name: fadeInUp;
+    animation-fill-mode: both;
+    animation-duration: .8s;
+    animation-delay: .2s;
+}
+
+.fade-2 {
+    animation-name: fadeInUp;
+    animation-fill-mode: both;
+    animation-duration: .8s;
+    animation-delay: .3s;
+}
+
+.fade-3 {
+    animation-name: fadeInUp;
+    animation-fill-mode: both;
+    animation-duration: .8s;
+    animation-delay: .4s;
+}
+
+.fade-4 {
+    animation-name: fadeInUp;
+    animation-fill-mode: both;
+    animation-duration: .8s;
+    animation-delay: .5s;
+}
+
+.fade-5 {
+    animation-name: fadeInUp;
+    animation-fill-mode: both;
+    animation-duration: .8s;
+    animation-delay: .6s;
+}
+
+.fade-6 {
+    animation-name: fadeInUp;
+    animation-fill-mode: both;
+    animation-duration: .8s;
+    animation-delay: .7s;
+}
+
+@keyframes fadeInUp {
+    0%   { opacity:0; transform: translateY(30px); }
+    100% { opacity:1; }
+}
+
+
+/* MAIN SECTION */
+
+#main {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#00000000, #111);
+    width: 100%;
+    height: 100vh;
+}
+
+#main .container {
+    display: block;
+    transform: translateY(-10%);
+    max-width: 1000px;
+    margin: auto 36px;
+}
+
+#main p {
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+#title {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1em;
+    margin-bottom: 0;
+}
+
+#subtitle {
+    color: #ccc;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+#scroll {
+    position: absolute;
+    width: 24px;
+    bottom: 5%;
+    right: calc(50% - 12px);
+}
+
+#scroll:hover svg {
+    transform: translateY(5px);
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+#scroll:hover svg path {
+    fill: #888;
+    transition: fill 0.3s;
+}
+
+
+/* APPS */
+
+#apps {
+    display: flex;
+    position: relative;
+    flex-flow: column nowrap;
+    align-items: center;
+    background-color: #111;
+    padding: 84px 36px;
+}
+
+#apps h3 {
+    color: white;
+    font-size: 1.2em;
+}
+
+#app-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#app-list a {
+    text-decoration: none;
+}
+
+#app-list li {
+    display: relative;
+    list-style: none;
+    width: 48%;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+@media (max-width: 700px) {
+    #app-list li { width: 100%; }
+}
+
+#app-list img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 16px;
+}
+
+#app-list h4 {
+    color: white;
+    margin-top: .4em;
+    margin-bottom: .25em;
+    width: fit-content;
+}
+
+#app-list a h4:hover {
+    color: #ccc;
+}
+
+#app-list p {
+    font-size: .75rem;
+    font-weight: 600;
+}
+
+
+/* VANTA */
+
+#vanta-2 {
+    display: block;
+    position: relative;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+#vanta-2 .overlay {
+    position: absolute;
+    background: linear-gradient(#111, #111111cc 25%, #111111aa 75%);
+    mix-blend-mode: auto;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+
+/* SUBSCRIBE */
+
+#sub-menu {
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap;
+    background: white;
+    text-align: center;
+    width: 65%;
+    max-width: 900px;
+    height: auto;
+    top: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#sub-menu img {
+    display: block;
+    position: relative;
+    width: 50%;
+    height: auto;
+}
+
+@media (max-width: 1100px) {
+    #sub-menu     { height: 28.5%; }
+    #sub-menu img { display: none; }
+}
+
+#sub-menu #info {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: auto 0;
+}
+
+#sub-menu h3 {
+    color: black;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    line-height: 1rem;
+    font-weight: bold;
+    margin-top: 0.3rem;
+    margin-bottom: 0.2rem;
+}
+
+#sub-menu h4 {
+    color: black;
+    text-transform: uppercase;
+    font-size: 1rem;
+    line-height: 1rem;
+    font-weight: bold;
+    margin-bottom: 1.3rem;
+}
+
+#email-field {
+    width: 75%;
+    background: #eef;
+    border-color: black;
+    text-align: center;
+    font-size: .8rem;
+    font-weight: 500;
+    height: 1.8rem;
+}
+
+#email-error {
+    display: none;
+    color: #bd3131;
+    font-size: .7rem;
+    font-weight: 600;
+    transform: translateY(20px);
+}
+
+#sub-button {
+    color: white;
+    background-color: #6f2b90;
+    border: none;
+    border-radius: 0;
+    font-size: .8rem;
+    height: 2rem;
+    width: 77%;
+}
+
+#sub-button:hover {
+    background-color: #9b38c9;
+    box-shadow: 2px 2px 3px #888;
+}
+
+
+/* FOOTER */
+
+#footer {
+    display: block;
+    position: absolute;
+    background: #000000aa;
+    width: 100%;
+    bottom: 0;
+}
+
+#footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#footer ul li {
+    display: flex;
+    color: #bbb;
+    font-size: 18px;
+    text-decoration: none;
+    height: 1.5em;
+    border-right: 1px solid #888;
+    padding-right: 15px;
+    margin-right: 15px;
+}
+
+#footer ul li:last-of-type { border-right: none; }

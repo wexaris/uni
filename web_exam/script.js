@@ -50,19 +50,32 @@ function createAppItem(data) {
     return li;
 }
 
-function form_submit() {
-    let form = document.forms["sub-form"];
+$("#sub-button").on("click", function() {
+    let email = $("#email-field").val();
 
-    if (form["email"].value == "") {
+    if (email == "") {
         // Show error text
-        let err = document.getElementById("email-error");
-        err.style.display = "inline";
+        let err = $("#email-error");
+        err.text("Please enter an email");
+        err.css("display", "inline");
+        return;
+    }
+    if (!validateEmail(email)) {
+        // Show error text
+        let err = $("#email-error");
+        err.text("Invalid email address");
+        err.css("display", "inline");
         return;
     }
 
     // Hide error text
-    let err = document.getElementById("email-error");
-    err.style.display = "none";
+    let err = $("#email-error");
+    err.css("display", "none");
 
-    form.submit();
+    $("#sub-form").submit();
+});
+
+function validateEmail(email) {
+    const re = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+    return re.test(email);
 }

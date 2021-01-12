@@ -74,6 +74,26 @@ a {
     100% { opacity:1; }
 }
 
+.overlay {
+    position: absolute;
+    background: #111111aa;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+.container {
+    display: block;
+    transform: translateY(-10%);
+    max-width: 1000px;
+    margin: auto 36px;
+}
+
+
+#vanta-1 .overlay {
+    background: linear-gradient(#00000000, #111);
+}
 
 /* MAIN SECTION */
 
@@ -82,16 +102,12 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(#00000000, #111);
     width: 100%;
     height: 100vh;
 }
 
 #main .container {
-    display: block;
     transform: translateY(-10%);
-    max-width: 1000px;
-    margin: auto 36px;
 }
 
 #main p {
@@ -165,7 +181,6 @@ a {
 }
 
 #app-list li {
-    display: relative;
     list-style: none;
     width: 48%;
     padding-top: 32px;
@@ -205,23 +220,13 @@ a {
 #vanta-2 {
     display: block;
     position: relative;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-content: center;
     width: 100%;
     height: 100vh;
 }
 
 #vanta-2 .overlay {
-    position: absolute;
     background: linear-gradient(#111, #111111cc 25%, #111111aa 75%);
-    mix-blend-mode: auto;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    z-index: 1;
 }
-
 
 /* SUBSCRIBE */
 
@@ -324,14 +329,14 @@ a {
 
 #footer ul {
     display: flex;
-    flex-direction: row;
+    flex-flow: row nowrap;
     justify-content: center;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 #footer ul li {
-    display: flex;
+    display: inline;
     color: #bbb;
     font-size: 18px;
     text-decoration: none;

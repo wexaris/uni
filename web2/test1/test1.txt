@@ -1,0 +1,65 @@
+Rainers Vorza
+rv20039
+
+1.
+1 - O
+2 - J
+3 - A
+4 - G
+5 - B
+6 - K
+7 - D
+8 - M
+9 - I
+10 - N
+11 - E
+12 - P
+13 - L
+14 - F
+15 - C
+16 - H
+
+2.
+b) POST
+e) SUBMIT
+
+3.
+d) $a !== $b
+
+4.
+The statement replaces instances of the following pattern in the URI
+<6 numbers><dash><5 numbers>
+with only the numbers, omitting the dash.
+?var=123456-12345  ->  ?var=12345612345
+
+5.
+$a=2;
+$b=1;
+$c=-(($a * $b)/($a + 1))*($b/2);
+echo $c;
+
+6.
+$grades = array("Maths"=>5,
+    "Physics"=>10, "Chemistry"=>6,
+    "English"=>4, "Computer"=>8);
+asort($grades);
+
+foreach($grades as $x=>$x_val) {
+    echo $x . ": " . $x_val . "<br>";
+}
+
+7.
+The password is stored as plaintext in the database.
+Variables aren't checked before use in an SQL statement, leaving room for SQL injections.
+POST should be used instead of GET.
+
+8.
+class TextInput {
+    public function add($text) {
+
+    }
+
+    public function getValue() {
+
+    }
+}

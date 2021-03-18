@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Test 2</title>
+</head>
+
+<body>
+    <h2>List All Records</h2>
+    <form action="action.php?action=list_all" method="POST">
+        <button name="name" value="value" type="submit">List All</button>
+    </form>
+    <br><hr>
+
+    <h2>Insert Record</h2>
+    <form action="action.php?action=insert" method="POST">
+        ID <input type="number" name="id"/><br>
+        Product <input type="text" name="product"/><br>
+        Quantity <input type="number" name="quantity"/><br>
+        Phone <input type="text" name="phone"/><br>
+        <button name="name" value="value" type="submit">Insert</button>
+    </form>
+    <br><hr>
+
+    <h2>Delete Record</h2>
+    <form action="action.php?action=delete" method="POST">
+        ID <input type="number" name="id"/>
+        <button name="name" value="value" type="submit">Delete</button>
+    </form>
+    <br>
+    <form action="action.php?action=delete_all" method="POST">
+        <button name="name" value="value" type="submit">Delete All</button>
+    </form>
+    <br><hr>
+
+    <h2>Update Record</h2>
+    <form action="action.php?action=update" method="POST">
+        ID <input type="number" name="id"/><br>
+        Product <input type="text" name="product"/><br>
+        Quantity <input type="number" name="quantity"/><br>
+        Phone <input type="text" name="phone"/><br>
+        <button name="name" value="value" type="submit">Update</button>
+    </form>
+    <br>
+</body>
+</html>

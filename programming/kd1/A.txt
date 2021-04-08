@@ -1,0 +1,2 @@
+STL map ir asociatīvs konteiners, kas satur atslēgu un vērtību pārus.
+STL vector ir viendabīgs konteiners, kas aptver dinamiskus masīvus.

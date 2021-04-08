@@ -22,34 +22,27 @@ Programma izveidota: 2021/04/08
 
 #include <iostream>
 #include <sstream>
-
-// Print the elements of any iterable container
-template<class Cont>
-void print(const Cont& container) {
-    for (const auto& item : container)
-        std::cout << item << " ";
-    std::cout << std::endl;
-}
+#include <list>
+#include "util.hpp"
 
 ////////////////////////////////////////////////////////////////
 // Program using std::list
 
-#include <list>
-
-// Modifies the given list and removes any duplicate values
-std::list<std::string> copy_without_duplicates(const std::list<std::string>& list) {
-    std::list<std::string> new_list;
+// Creates a new list from the given one, but without any duplicates
+template<typename Type>
+std::list<Type> copy_without_duplicates(const std::list<Type>& list) {
+    std::list<Type> new_list;
 
     for (const auto& item : list) {
-        // Skip insert, move to next value
+        // Check if already exists
         for (const auto& added : new_list)
-            if (item == added)
-                goto exists;
+            if (val(item) == val(added))
+                goto next;
 
         // Insert value into new list
-        new_list.push_back(item);
+        new_list.push_back(Type(item));
 
-exists:;
+next:;
     }
 
     return new_list;

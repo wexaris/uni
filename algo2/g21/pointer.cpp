@@ -22,31 +22,11 @@ Programma izveidota: 2021/04/08
 
 #include <iostream>
 #include <sstream>
-#include <list>
+#include "forward_list.hpp"
 #include "util.hpp"
 
 ////////////////////////////////////////////////////////////////
-// Program using std::list
-
-// Creates a new list from the given one, but without any duplicates
-template<typename Type>
-std::list<Type> copy_without_duplicates(const std::list<Type>& list) {
-    std::list<Type> new_list;
-
-    for (const auto& item : list) {
-        // Check if already exists
-        for (const auto& added : new_list)
-            if (val(item) == val(added))
-                goto next;
-
-        // Insert value into new list
-        new_list.push_back(Type(item));
-
-next:;
-    }
-
-    return new_list;
-}
+// Program using ForwardList<T*>
 
 int main() {
     while (true) {
@@ -57,14 +37,16 @@ int main() {
         if (input.empty())
             break;
 
-        // Create list
-        std::list<std::string> list;
+        // Create list and iterator
+        ForwardList<std::string*> list;
+        auto iter = list.cbefore_begin(); // For inserting new values
 
         // Split into words and add to list
         std::string word;
         std::stringstream ss(input);
         while (ss >> word) {
-            list.push_back(word); // std::list supports push_back
+            auto item = new std::string(word);
+            iter = list.insert_after(iter, item); // ForwardList doesn't support push_back
         }
 
         print(list);
@@ -74,6 +56,12 @@ int main() {
 
         print(list);
         std::cout << std::endl;
+
+        // Free list item memory
+        for (auto& item : list) {
+            delete item;
+            item = nullptr;
+        }
 
         // Remove list items
         list.clear();

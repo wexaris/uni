@@ -26,28 +26,7 @@ Programma izveidota: 2021/04/08
 #include "util.hpp"
 
 ////////////////////////////////////////////////////////////////
-// Program using custom forward list implementation
-
-// Creates a new list from the given one, but without any duplicates
-template<typename Type>
-ForwardList<Type> copy_without_duplicates(const ForwardList<Type>& list) {
-    ForwardList<Type> new_list;
-    auto iter = new_list.before_begin();
-
-    for (const auto& item : list) {
-        // Check if already exists
-        for (const auto& added : new_list)
-            if (val(item) == val(added))
-                goto next;
-
-        // Insert value into new list
-        iter = new_list.insert_after(iter, Type(item));
-
-next:;
-    }
-
-    return new_list;
-}
+// Program using ForwardList<T>
 
 int main() {
     while (true) {

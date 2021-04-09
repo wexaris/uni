@@ -13,6 +13,32 @@ augoši. Informācijas ielasīšanai un sakārtošanas nodrošināšanai izmanto
 struktūru STL map vai STL list. Papildus izveidot palīgprogrammas binārā faila
 izveidošanai un tā satura izdrukāšanai.
 
-Programma izveidota: 2021/02/26
+Programma izveidota: 2021/04/09
 *******************************************/
 
+#include <iostream>
+#include <fstream>
+#include "date.hpp"
+
+int main() {
+    // Open input binary file
+    std::ifstream in("dates.bin", std::ios::binary);
+    if (!in) {
+        std::cout << "Failed to open file!" << std::endl;
+        return EXIT_FAILURE;
+    }
+
+    // Get file length
+    in.seekg(0, in.end);
+    size_t len = in.tellg();
+    in.seekg(0, in.beg);
+
+    // Print dates from file
+    while (in.tellg() < len) {
+        Date date;
+        in.read((char*)&date, sizeof(Date));
+        std::cout << date.to_string() << std::endl;
+    }
+
+    return EXIT_SUCCESS;
+}

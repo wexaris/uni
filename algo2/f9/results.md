@@ -1,8 +1,8 @@
 
 # Expected Results
 
-| Input       | Expected Result       | C++ |
-| ----------- | :-------------------: | :-: |
+|    Input    |    Expected Result    | C++ |
+|:-----------:|:---------------------:|:---:|
 | \<no file>  | \<exit>               |  +  |
 | \<bad path> | "Failed to open"      |  +  |
 | AbC         | a 1 <br> b 1 <br> c 1 |  +  |

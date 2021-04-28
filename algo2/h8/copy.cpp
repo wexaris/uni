@@ -13,13 +13,17 @@ augoši. Informācijas ielasīšanai un sakārtošanas nodrošināšanai izmanto
 struktūru STL map vai STL list. Papildus izveidot palīgprogrammas binārā faila
 izveidošanai un tā satura izdrukāšanai.
 
-Programma izveidota: 2021/04/09
+Programma izveidota: 2021/04/15
 *******************************************/
 
 #include <iostream>
 #include <fstream>
 #include <list>
 #include "date.hpp"
+
+constexpr const char* FILENAME = "dates.bin";
+constexpr const char* ASCENDING_OUT = "ascending.txt";
+constexpr const char* DESCENDING_OUT = "descending.txt";
 
 // Date comparison function
 // Ensures ascending order when used for sorting
@@ -33,9 +37,13 @@ bool date_compare(const Date& a, const Date& b) {
     return a.Year < b.Year;
 }
 
+/* Create two readable copies of a dates.bin file.
+ * One copy is in ascending order.
+ * One copy is in descending order.
+ */
 int main() {
     // Open input binary file
-    std::ifstream in("dates.bin", std::ios::binary);
+    std::ifstream in(FILENAME, std::ios::binary);
     if (!in) {
         std::cout << "Failed to open file!" << std::endl;
         return EXIT_FAILURE;
@@ -59,7 +67,7 @@ int main() {
     dates.sort(date_compare);
 
     { // Write dates in ascending order
-        std::ofstream out_asc("ascending.txt");
+        std::ofstream out_asc(ASCENDING_OUT);
         if (!out_asc) {
             std::cout << "Failed to open file!" << std::endl;
         }
@@ -71,7 +79,7 @@ int main() {
     }
 
     { // Write dates in descending order
-        std::ofstream out_desc("descending.txt");
+        std::ofstream out_desc(DESCENDING_OUT);
         if (!out_desc) {
             std::cout << "Failed to open file!" << std::endl;
         }

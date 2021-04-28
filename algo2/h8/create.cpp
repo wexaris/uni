@@ -13,7 +13,7 @@ augoši. Informācijas ielasīšanai un sakārtošanas nodrošināšanai izmanto
 struktūru STL map vai STL list. Papildus izveidot palīgprogrammas binārā faila
 izveidošanai un tā satura izdrukāšanai.
 
-Programma izveidota: 2021/04/09
+Programma izveidota: 2021/04/15
 *******************************************/
 
 #include <iostream>
@@ -21,26 +21,31 @@ Programma izveidota: 2021/04/09
 #include <time.h>
 #include "date.hpp"
 
-constexpr unsigned int DATE_COUNT = 20;
-constexpr unsigned int MIN_YEAR = 2000;
-constexpr unsigned int MAX_YEAR = 2021;
+constexpr const char* FILENAME = "dates.bin";
+
+constexpr unsigned int DATE_COUNT = 5;
+constexpr unsigned int MIN_YEAR = 2019;
+constexpr unsigned int MAX_YEAR = 2020;
 
 constexpr unsigned int YEAR_RANGE = MAX_YEAR - MIN_YEAR;
-constexpr unsigned int MONTH_RANGE = 12;
+constexpr unsigned int MONTH_RANGE = 3;
 constexpr unsigned int DAY_RANGE = 30;
 
+/* Create a binary file containing a list of dates.
+ * The items are not ordered.
+ */
 int main() {
     // Open output binary file
-    std::ofstream out("dates.bin", std::ios::binary);
+    std::ofstream out(FILENAME, std::ios::binary);
     if (!out) {
         std::cout << "Failed to open file!" << std::endl;
         return EXIT_FAILURE;
     }
 
-    // Init random for date generation
+    // Init random number generator
     srand(time(NULL));
 
-    // Generate and write dates to file
+    // Generate and write random dates to file
     for (int i = 1; i <= DATE_COUNT; i++) {
         Date date;
         date.Year = rand() % (YEAR_RANGE + 1) + MIN_YEAR;

@@ -1,0 +1,10 @@
+Funkciju vai operatoru parslogošana nozīmē iespēju izveidot vairākas
+funkcijas ar vienādiem nosaukumiem, bet dažādām implementācijām.
+Šis darbojas ar konteksta un parametru tipu palīdzību, ļaujot kompilatoram
+atpazīt, kura funkcijas implementācija ir lietojama kurā reizē.
+
+Piemēram, funkc() un funkc(int x) ir pārslogotas. Tas nozīmē, ka izsaucot Funkciju
+bez argumentiem izsauks pirmo implementāciju, bet ar veselu ciparu - otro.
+
+Pateicoties tam, ka vairākās programmēšanas valodās, ieskaitot C++, operatori arī
+ir funkcijas, to darbību var mainīt ar pārslogošanas palīdzību.

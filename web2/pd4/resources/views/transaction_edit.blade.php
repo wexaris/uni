@@ -25,6 +25,6 @@
           @endforeach
        </ul>
     </div>
-@endif
+    @endif
 </body>
 </html>

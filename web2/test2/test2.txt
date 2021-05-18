@@ -1,0 +1,97 @@
+
+Rainers Vorza
+rv20039
+
+2.
+Route::get('service', [ServiceController::class, 'index']);
+Route::get('service/create', [ServiceController::class, 'create']);
+Route::get('service/{id}', [ServiceController::class, 'show']);
+Route::resource('service', ServiceController::class, ['except' => ['index', 'create', 'show']]);
+
+3.
+// In Request.php
+public function requestParts() {
+    return $this->hasMany(Request_parts::class);
+}
+
+// In Request_parts.php
+public function request() {
+    return $this->belongsTo(Request::class);
+}
+public function part() {
+    return $this->belongsTo(Part::class);
+}
+
+// In Part.php
+public function requestParts() {
+    return $this->hasMany(Request_parts::class);
+}
+
+4.
+Parts::where('name', '=', 'Headlights')->
+    where('manufacturer', '=', 'BMW');
+
+5.
+Laravel provides an easy to use database seeder, that can be used to set initial data.
+All you need to do is change the DatabaseSeeder.php file.
+
+// In DatabaseSeeder.php
+public function run() {
+    $part = new Part();
+    $part->name = 'ABC';
+    $part->manufacturer = 'XYZ';
+    $part->save();
+}
+
+7.
+You want to find and open your apache virtual hosts configuration folder, where you
+can set up two addresses that point to the same rescources.
+
+// In httpd-vhosts.conf
+<VirtualHost *:80>
+    ServerName service.com
+    DocumentRoot "your/project/path/"
+    <Directory "your/project/path/">
+        AllowOverride All
+    </Directory>
+</VirtualHost>
+
+8.
+`php artisan make:migration create_requests_table`
+`php artisan make:migration create_request_parts_table`
+`php artisan make:migration create_parts_table`
+
+// In *_create_requests_table.php
+public function up() {
+    Schema::create('requests', function (Blueprint $table) {
+        $table->id();
+        $table->timestamps();
+        $table->longText('description');
+        $table->string('car_make');
+        $table->string('car_model');
+        $table->integer('year');
+        $table->float('cost');
+    });
+}
+
+// In *_create_request_parts_table.php
+public function up() {
+    Schema::create('request_parts', function (Blueprint $table) {
+        $table->id();
+        $table->timestamps();
+        $table->foreignId('request_id')->constrained();
+        $table->foreignId('part_id')->constrained();
+        $table->integer('number_of_parts');
+    });
+}
+
+
+// In *_create_parts_table.php
+public function up() {
+    Schema::create('parts', function (Blueprint $table) {
+        $table->id();
+        $table->timestamps();
+        $table->string('name');
+        $table->string('manufacturer');
+    });
+}

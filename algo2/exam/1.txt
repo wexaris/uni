@@ -1,0 +1,21 @@
+Izņēmumsituāciju apstrāde ir process, kurā programma cenšas no nelabvēlīgas un neparedzamas
+siutācijas atgriezties kontrolētā stāvoklī. Parasti šādas sitācijas apstrāde notiek ārpus
+standarta programmas plūsmas, paļaujoties uz ieprieš nozīmētiem izņēmumu apstādātājiem.
+
+Daudzas programmēšanas valodas, ieskaitot C++, C#, Java u.c., piedāvā programmētājas speciālas
+sistēmas, kas ļauj vieglāk implementēt izņēmumsituāciju apstrādi.
+Piemēram `try-catch` struktūras, kurās var definēt noteiktas reakcijas uz noteikta tipa
+izņēmumsituācijām.
+Laba izņēmumsituāciju apstrāde ļauj programmai atgriezties vēlamā stāvoklī un tuprināt darbību
+no pareizās vietas.
+
+Tomēr izņēmumsituāciju apstrāde nav vienīgais veids, kā tikt galā ar nevēlamiem programmas
+stāvokļiem. Vēl viens populārs risinājums ir kļūdu pārbaude, kas strādā kā daļa no standarta
+programmas darbības, bet izmanto īpašas struktūras vai globālus datus, lai informētu pārējās
+programmas daļas par iespējamu problēmu.
+Valodas, kas paļaujas uz šādu sistēmu ir, piemēram, Rust, kas izmanto `Result<Ok, Err>` un
+`Option<Some, None>`, lai no funkcijas atgrieztos ar informāciju par kļūdu, vai C, kas ļauj
+izmantot globālo `errno` mainīgo.
+
+Vēl viena iespēja ir meklēt kļūdas pirms tās ir notikušas, veicot lietotāja ievadītu vai
+atrastu datu validāciju.

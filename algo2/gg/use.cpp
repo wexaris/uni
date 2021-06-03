@@ -20,6 +20,48 @@ GG – STL list un saistītais saraksts ar izņēmumsituāciju apstrādi un vien
 Papildus norāde: šādam vienībtestēšanas projektam daļēji atbilst iepriekšējā
 semestra pēdējais laboratorijas darbs (ar klasēm) ar cieti iekodētu main funkciju.
 
-Programma izveidota: 2021/02/26
+Programma izveidota: 2021/06/01
 *******************************************/
 
+#include <iostream>
+#include <sstream>
+#include "forward_list.hpp"
+#include "util.hpp"
+
+////////////////////////////////////////////////////////////////
+// Program using ForwardList<T>
+
+int main() {
+    while (true) {
+        // Collect input
+        std::cout << "Enter values (space seperated; leave empty to exit): ";
+        std::string input;
+        std::getline(std::cin, input);
+        if (input.empty())
+            break;
+
+        // Create list and iterator
+        ForwardList<std::string> list;
+        auto iter = list.cbefore_begin(); // For inserting new values
+
+        // Split into words and add to list
+        std::string word;
+        std::stringstream ss(input);
+        while (ss >> word) {
+            iter = list.insert_after(iter, word); // ForwardList doesn't support push_back
+        }
+
+        print(list);
+
+        // Create new list without duplicates
+        list = copy_without_duplicates(list);
+
+        print(list);
+        std::cout << std::endl;
+
+        // Remove list items
+        list.clear();
+    }
+
+    return EXIT_SUCCESS;
+}
